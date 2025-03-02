@@ -47,11 +47,8 @@ function displayLeaderBoard(){
         const playerDiv = document.createElement("div");
         playerDiv.classList.add("player-div")
 
-        const fname = document.createElement("p");
-        fname.innerText = player.fname; 
-
-        const lname = document.createElement("p");
-        lname.innerText = player.lname;
+        const playerName = document.createElement("p");
+        playerName.innerText = `${player.fname} ${player.lname} ${new Date().toLocaleString()}` 
 
         const country = document.createElement("p");
         country.innerText = player.country;
@@ -75,7 +72,7 @@ function displayLeaderBoard(){
         minus5.addEventListener("click",()=> modifyData(player.id, "-"))
         del.addEventListener("click",()=> deleteData(player.id));
 
-        playerDiv.append(fname, lname, country, score, actions)
+        playerDiv.append(playerName, country, score, actions)
         fragment.append(playerDiv);
 
     })
